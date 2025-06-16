@@ -1,4 +1,4 @@
-package manicomio.manicomio.clinica;
+package manicomio.clinica;
 import java.util.Date;
 
 /*

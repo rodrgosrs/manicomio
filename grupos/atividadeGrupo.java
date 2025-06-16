@@ -1,4 +1,4 @@
-package manicomio.manicomio.grupos;
+package manicomio.grupos;
 
 /*
  * @author Rodrigo
