@@ -1,6 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /*
  * @author Rodrigo

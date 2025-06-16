@@ -42,9 +42,11 @@ public class Paciente extends RegistroPessoal {
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
     }
+    @Override
     public int getIdRegistroPessoal() {
         return idRegistroPessoal;
     }
+    @Override
     public void setIdRegistroPessoal(int idRegistroPessoal) {
         this.idRegistroPessoal = idRegistroPessoal;
     }

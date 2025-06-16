@@ -20,7 +20,8 @@ public class Responsavel extends RegistroPessoal {
                        String telefone,
                        String endereco,
                        int idResponsavel,
-                       String grauParentesco) {
+                       String grauParentesco,
+                       int idPaciente) {
         super(idRegistroPessoal,
               nome,
               cpf,
