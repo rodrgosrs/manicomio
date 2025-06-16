@@ -6,12 +6,12 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class paciente extends registroPessoal {
+public class Paciente extends RegistroPessoal {
     private int idPaciente;
     private String status;
     private int idGrupoPaciente;
     
-    public paciente(int idRegistroPessoal,
+    public Paciente(int idRegistroPessoal,
                     String nome,
                     String cpf,
                     String rg,

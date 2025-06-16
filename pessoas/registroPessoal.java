@@ -6,8 +6,8 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class registroPessoal {
-    int idRegistroPessoal;
+public class RegistroPessoal {
+    private int idRegistroPessoal;
     private String nome;
     private String cpf;
     private String rg;
@@ -16,7 +16,7 @@ public class registroPessoal {
     private String telefone;
     private String endereco;
     
-    public registroPessoal(int idRegistroPessoal,
+    public RegistroPessoal(int idRegistroPessoal,
                             String nome,
                             String cpf,
                             String rg,

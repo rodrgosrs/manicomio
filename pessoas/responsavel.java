@@ -6,11 +6,11 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class responsavel extends registroPessoal {
+public class Responsavel extends RegistroPessoal {
     private int idResponsavel;
     private String grauParentesco;
     
-    public responsavel(int idRegistroPessoal,
+    public Responsavel(int idRegistroPessoal,
                     String nome,
                     String cpf,
                     String rg,
