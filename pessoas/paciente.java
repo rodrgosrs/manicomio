@@ -8,10 +8,12 @@ import java.util.Date;
 
 public class Paciente extends RegistroPessoal {
     private int idPaciente;
+    private int idRegistroPessoal;
     private String status;
     private int idGrupoPaciente;
     
-    public Paciente(int idRegistroPessoal,
+    public Paciente(int idPaciente,
+                    int idRegistroPessoal,
                     String nome,
                     String cpf,
                     String rg,
@@ -19,17 +21,16 @@ public class Paciente extends RegistroPessoal {
                     String sexo,
                     String telefone,
                     String endereco,
-                    int idPaciente,
                     String status,
                     int idGrupoPaciente) {
         super(idRegistroPessoal,
-                nome,
-                cpf,
-                rg,
-                dataNascimento,
-                sexo,
-                telefone,
-                endereco);
+              nome,
+              cpf,
+              rg,
+              dataNascimento,
+              sexo,
+              telefone,
+              endereco);
         this.idPaciente = idPaciente;
         this.status = status;
         this.idGrupoPaciente = idGrupoPaciente;
@@ -40,6 +41,12 @@ public class Paciente extends RegistroPessoal {
     }
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
+    }
+    public int getIdRegistroPessoal() {
+        return idRegistroPessoal;
+    }
+    public void setIdRegistroPessoal(int idRegistroPessoal) {
+        this.idRegistroPessoal = idRegistroPessoal;
     }
     public String getStatus() {
         return status;

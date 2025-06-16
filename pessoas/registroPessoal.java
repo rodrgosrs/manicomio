@@ -17,13 +17,13 @@ public class RegistroPessoal {
     private String endereco;
     
     public RegistroPessoal(int idRegistroPessoal,
-                            String nome,
-                            String cpf,
-                            String rg,
-                            Date dataNascimento,
-                            String sexo,
-                            String telefone,
-                            String endereco){
+                           String nome,
+                           String cpf,
+                           String rg,
+                           Date dataNascimento,
+                           String sexo,
+                           String telefone,
+                           String endereco){
         this.idRegistroPessoal = idRegistroPessoal;
         this.nome = nome;
         this.cpf = cpf;

@@ -5,14 +5,14 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class internacao {
+public class Internacao {
     private int idInternacao;
     private int idPaciente;
     private Date dataEntrada;
     private Date dataAlta;
     private String motivo;
 
-    public internacao(int idInternacao,
+    public Internacao(int idInternacao,
                       int idPaciente,
                       Date dataEntrada,
                       Date dataAlta,

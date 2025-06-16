@@ -5,14 +5,14 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class atendimento {
+public class Atendimento {
     private int idAtendimento;
     private int idPaciente;
     private int idFuncionario;
     private Date dataHora;
     private String observacao;
     
-    public atendimento(int idAtendimento,
+    public Atendimento(int idAtendimento,
                        int idPaciente,
                        int idFuncionario,
                        Date dataHora,

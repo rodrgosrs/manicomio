@@ -5,13 +5,13 @@ import java.util.Date;
  * @author Rodrigo
  */
 
-public class atividade {
+public class Atividade {
     private int idAtividade;
     private String nomeAtividade;
     private String descricao;
     private Date dataHora;
     
-    public atividade(int idAtividade,
+    public Atividade(int idAtividade,
                      String nomeAtividade,
                      String descricao,
                      Date dataHora) {

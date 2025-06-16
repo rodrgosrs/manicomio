@@ -4,11 +4,11 @@ package manicomio.grupos;
  * @author Rodrigo
  */
 
-public class atividadeGrupo {
+public class AtividadeGrupo {
     private int idAtividadeGrupo;
     private int idGrupoPaciente;
     
-    public atividadeGrupo(int idAtividadeGrupo,
+    public AtividadeGrupo(int idAtividadeGrupo,
                           int idGrupoPaciente) {
         this.idAtividadeGrupo = idAtividadeGrupo;
         this.idGrupoPaciente = idGrupoPaciente;

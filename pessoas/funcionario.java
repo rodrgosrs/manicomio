@@ -11,23 +11,23 @@ public class Funcionario extends RegistroPessoal {
     private String cargo;
     
     public Funcionario (int idRegistroPessoal,
-                    String nome,
-                    String cpf,
-                    String rg,
-                    Date dataNascimento,                    
-                    String sexo,
-                    String telefone,
-                    String endereco,
-                    int idFuncionario,
-                    String cargo) {
+                        String nome,
+                        String cpf,
+                        String rg,
+                        Date dataNascimento,                    
+                        String sexo,
+                        String telefone,
+                        String endereco,
+                        int idFuncionario,
+                        String cargo) {
         super(idRegistroPessoal,
-                nome,
-                cpf,
-                rg,
-                dataNascimento,
-                sexo,
-                telefone,
-                endereco);
+              nome,
+              cpf,
+              rg,
+              dataNascimento,
+              sexo,
+              telefone,
+              endereco);
         this.idFuncionario = idFuncionario;
         this.cargo = cargo;
     }

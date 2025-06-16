@@ -4,12 +4,12 @@ package manicomio.clinica;
  * @author Rodrigo
  */
 
-public class referenciaProfissional {
+public class ReferenciaProfissional {
     private int idReferencia;
     private int idFuncionario;
     private int idPaciente;
     
-    public referenciaProfissional(int idReferencia,
+    public ReferenciaProfissional(int idReferencia,
                                   int idFuncionario,
                                   int idPaciente) {
         this.idReferencia = idReferencia;
