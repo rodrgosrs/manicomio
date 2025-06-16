@@ -1,4 +1,4 @@
-package manicomio.pessoas;
+package pessoas;
 
 import java.util.Date;
 

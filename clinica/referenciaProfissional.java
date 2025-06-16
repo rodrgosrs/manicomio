@@ -1,4 +1,4 @@
-package manicomio.clinica;
+package clinica;
 
 /*
  * @author Rodrigo

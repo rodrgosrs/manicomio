@@ -1,5 +1,3 @@
-package manicomio;
-
 /*
  * @author Rodrigo
  */
