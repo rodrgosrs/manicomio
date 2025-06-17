@@ -10,6 +10,7 @@ import java.util.Date;
 import dao.PacienteDAO;
 import dao.GrupoPacienteDAO;
 import pessoas.Paciente;
+import grupos.GrupoPaciente;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.text.MaskFormatter;
@@ -28,7 +29,7 @@ public class CadastroPacienteGUI extends JFrame {
     private final JTextField txtEndereco;
     private final JComboBox<String> cbStatus;
     private final JComboBox<GrupoPaciente> cbGrupoPaciente;
-    private final PacienteDAO pacienteDAO;
+    private final PacienteDAO pacienteDAO;  
     private final GrupoPacienteDAO grupoPacienteDAO;
 
     public CadastroPacienteGUI() {
@@ -185,23 +186,5 @@ public class CadastroPacienteGUI extends JFrame {
         cbStatus.setSelectedIndex(0);
         cbGrupoPaciente.setSelectedIndex(-1);
         txtNome.requestFocus();
-    }
-
-    //
-    class GrupoPaciente {
-        private int idGrupoPaciente;
-        private String nomeGrupo;
-        
-        public GrupoPaciente(int id, String nome) {
-            this.idGrupoPaciente = id;
-            this.nomeGrupo = nome;
-        }
-        public int getIdGrupoPaciente() {
-            return idGrupoPaciente;
-        }
-        @Override
-        public String toString() {
-            return nomeGrupo;
-        }
     }
 }

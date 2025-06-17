@@ -10,8 +10,8 @@ public class GrupoPaciente {
     private String descricao;
 
     public GrupoPaciente(int idGrupoPaciente,
-    String nomeGrupo,
-    String descricao) {
+                         String nomeGrupo,
+                         String descricao) {
         this.idGrupoPaciente = idGrupoPaciente;
         this.nomeGrupo = nomeGrupo;
         this.descricao = descricao;
@@ -34,5 +34,9 @@ public class GrupoPaciente {
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    @Override
+        public String toString() {
+            return nomeGrupo;
     }
 }

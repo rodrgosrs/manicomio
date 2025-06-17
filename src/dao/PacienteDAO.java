@@ -61,13 +61,14 @@ public class PacienteDAO {
                     nome, cpf, rg, dataNascimento,
                     sexo, telefone, endereco
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
                 """;
 
         String sqlPaciente = """
                 INSERT INTO paciente (
                     status, idGrupoPaciente, idRegistroPessoal
                 )
+                    VALUES (?, ?, ?)
                 """;
 
         Connection conn = null;

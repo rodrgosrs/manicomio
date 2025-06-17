@@ -1,7 +1,6 @@
 import gui.CadastroPacienteGUI;
 import gui.SystemM;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /*
  * @author Rodrigo
@@ -22,12 +21,7 @@ public class Manicomio {
 
                 cadastro.setVisible(true);
 
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(menuPrincipal,
-                        "Erro ao abrir janela de cadastro:\n" + ex.getMessage(),
-                        "Erro",
-                        JOptionPane.ERROR_MESSAGE);
-            }
+            } catch (Exception ex) { }
         });
 
         menuPrincipal.adicionarListenerSair(e -> System.exit(0));
