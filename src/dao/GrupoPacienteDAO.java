@@ -8,6 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * @author Rodrigo
+ */
+
 public class GrupoPacienteDAO {
     
     public List<GrupoPaciente> findAll() throws SQLException {

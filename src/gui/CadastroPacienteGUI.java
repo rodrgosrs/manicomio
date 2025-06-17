@@ -1,19 +1,17 @@
 package gui;
 
-import javax.swing.*;
+import dao.GrupoPacienteDAO;
+import dao.PacienteDAO;
+import grupos.GrupoPaciente;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import dao.PacienteDAO;
-import dao.GrupoPacienteDAO;
-import pessoas.Paciente;
-import grupos.GrupoPaciente;
-import java.sql.SQLException;
 import java.util.List;
+import javax.swing.*;
 import javax.swing.text.MaskFormatter;
+import pessoas.Paciente;
 
 /*
  * @author Rodrigo
@@ -120,7 +118,7 @@ public class CadastroPacienteGUI extends JFrame {
     private JButton criarBotao(String texto, Color corFundo) {
         JButton botao = new JButton(texto);
         botao.setBackground(corFundo);
-        botao.setForeground(Color.WHITE);
+        botao.setForeground(Color.BLACK);
         botao.setFocusPainted(false);
         botao.setPreferredSize(new Dimension(120, 40));
         return botao;
