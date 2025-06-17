@@ -1,3 +1,5 @@
+package gui;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -63,7 +65,7 @@ public class SystemM extends JFrame {
         label.setFont(new Font("Arial", Font.BOLD, 18));
         
         add(label, BorderLayout.NORTH);
-        add(new JScrollPane(panelBotoes), BorderLayout.CENTER);
+        
         JScrollPane scrollPane = new JScrollPane(panelBotoes);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         scrollPane.getHorizontalScrollBar().setUnitIncrement(16);
