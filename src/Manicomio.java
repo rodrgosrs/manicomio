@@ -1,4 +1,5 @@
 import gui.CadastroPacienteGUI;
+import gui.ListaPacientesGUI;
 import gui.SystemM;
 import javax.swing.JFrame;
 
@@ -21,7 +22,12 @@ public class Manicomio {
 
                 cadastro.setVisible(true);
 
-            } catch (Exception ex) { }
+            } catch (Exception ex) {
+            }
+        });
+        
+        menuPrincipal.adicionarListenerListarPacientes(e -> {
+            new ListaPacientesGUI().setVisible(true);
         });
 
         menuPrincipal.adicionarListenerSair(e -> System.exit(0));

@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import pessoas.Paciente;
 
 /*
@@ -52,6 +54,50 @@ public class PacienteDAO {
                         rs.getInt("idGrupoPaciente")));
             }
         }
+        return pacientes;
+    }
+
+    public List<Map<String, Object>> listarTodosPacientes() throws SQLException {
+        String sql = """
+                SELECT p.idPaciente,
+                       p.status,
+                       p.idGrupoPaciente,
+                       r.idRegistroPessoal,
+                       r.nome,
+                       r.cpf,
+                       r.rg,
+                       r.dataNascimento,
+                       r.sexo,
+                       r.telefone,
+                       r.endereco
+                FROM Paciente p
+                JOIN RegistroPessoal r ON p.idRegistroPessoal = r.idRegistroPessoal
+                """;
+
+        List<Map<String, Object>> pacientes = new ArrayList<>();
+
+        try (Connection conn = DBConnection.getConnection();
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql)) {
+
+            while (rs.next()) {
+                Map<String, Object> paciente = new HashMap<>();
+                paciente.put("idPaciente", rs.getInt("idPaciente"));
+                paciente.put("idRegistroPessoal", rs.getInt("idRegistroPessoal"));
+                paciente.put("nome", rs.getString("nome"));
+                paciente.put("cpf", rs.getString("cpf"));
+                paciente.put("rg", rs.getString("rg"));
+                paciente.put("dataNascimento", rs.getDate("dataNascimento"));
+                paciente.put("sexo", rs.getString("sexo"));
+                paciente.put("telefone", rs.getString("telefone"));
+                paciente.put("endereco", rs.getString("endereco"));
+                paciente.put("status", rs.getString("status"));
+                paciente.put("idGrupoPaciente", rs.getInt("idGrupoPaciente"));
+
+                pacientes.add(paciente);
+            }
+        }
+
         return pacientes;
     }
 
@@ -126,8 +172,8 @@ public class PacienteDAO {
 
     public void update(Paciente paciente) throws SQLException {
         String sqlRegistro = """
-                UPDATE RegistroPessoal 
-                SET nome = ?, 
+                UPDATE RegistroPessoal
+                SET nome = ?,
                     cpf = ?,
                     rg = ?,
                     dataNascimento = ?,
@@ -138,17 +184,17 @@ public class PacienteDAO {
                 """;
 
         String sqlPaciente = """
-                UPDATE Paciente 
+                UPDATE Paciente
                 SET status = ?,
                     idGrupoPaciente = ?
                 WHERE idPaciente = ?
                 """;
-    
+
         Connection conn = null;
         try {
             conn = DBConnection.getConnection();
             conn.setAutoCommit(false);
-    
+
             try (PreparedStatement psRegistro = conn.prepareStatement(sqlRegistro)) {
                 psRegistro.setString(1, paciente.getNome());
                 psRegistro.setString(2, paciente.getCpf());
@@ -159,15 +205,15 @@ public class PacienteDAO {
                 psRegistro.setString(7, paciente.getEndereco());
                 psRegistro.setInt(8, paciente.getIdRegistroPessoal());
             }
-    
+
             try (PreparedStatement psPaciente = conn.prepareStatement(sqlPaciente)) {
                 psPaciente.setString(1, paciente.getStatus());
                 psPaciente.setInt(2, paciente.getIdGrupoPaciente());
                 psPaciente.setInt(3, paciente.getIdPaciente());
             }
-    
+
             conn.commit();
-            
+
         } catch (SQLException e) {
             if (conn != null) {
                 conn.rollback();
@@ -182,10 +228,10 @@ public class PacienteDAO {
 
     public void delete(int idPaciente) throws SQLException {
         String sql = "DELETE FROM paciente WHERE idPaciente = ?";
-        
+
         try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            
+                PreparedStatement ps = conn.prepareStatement(sql)) {
+
             ps.setInt(1, idPaciente);
         }
     }
