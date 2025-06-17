@@ -1,3 +1,5 @@
+package dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,11 +17,13 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
-            throw new RuntimeException("Driver JDBC não encontrado", ex);
+            System.err.println("ERRO FATAL: Driver JDBC não encontrado!");
+            ex.printStackTrace();
+            System.exit(1);
         }
     }
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
-    }   
+    }
 }
